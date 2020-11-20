@@ -1,0 +1,8 @@
+pickle5
+pandas
+numpy
+Keras
+tqdm
+opencv-python
+tensorflow
+matplotlib
