@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Classificador de Laranja</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/form_upload.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form class="form-upload" method=post enctype=multipart/form-data>
+      <h1 class="h2 mb-3 font-weight-normal">Classificador de Laranja</h1>
+      <br>
+      <h1 class="h6 mb-3 font-weight-normal">Faça o upload de uma ou mais imagens</h1>
+      <input type="file" id="image" name="image" multiple="" class="form-control" required autofocus>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Detectar</button>
+      <br>
+      {% if image_locs %}
+      {% for url in image_locs %}
+      <img src="{{url.url}}" alt="" width="256" height="256"/>
+      <h3 class="h3 mb-3 font-weight-normal">{{url.label}}</h3>
+      {% endfor %}
+      {%endif%}
+    </form>
+  </body>
+</html>
